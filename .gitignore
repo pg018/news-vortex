@@ -1,0 +1,5 @@
+.env
+hindi_english_parallel.csv.zip
+hindi_english_parallel.csv
+__pycache__
+.venv
