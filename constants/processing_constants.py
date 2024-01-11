@@ -110,14 +110,9 @@ unneccessary_content_list = [
 ]  # Replace with the content you want to remove
 
 trained_topics = [
-    "microsoft",
-    "meta",
-    "israel",
-    "narendra modi",
-    "artificial intelligence",
-    "russia",
-    "indian politics",
-    "bollywood",
-    "rishi sunak",
-    "tata",
+    "elon musk_10",
+    "narendra modi_6",
+    "artificial intelligence_4",
+    "recession_1",
+    "india stock market_7",
 ]

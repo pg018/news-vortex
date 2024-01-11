@@ -92,9 +92,7 @@ class GenerateTrainingData:
             if len(scraped_content_dict["scrapped_text"].strip()) > 0:
                 # for checking if any file has less than 100 characters.
                 # also an indicator that the file has been generated
-                print(
-                    f"{file_number + i + 1} {len(scraped_content_dict['scrapped_text'].strip()) < 100}"
-                )
+                print(f"{file_number + i + 1}")
                 with open(scrapped_file_path, "w", encoding="utf-8") as file:
                     file.write(scraped_content_dict["scrapped_text"])
                 with open(html_file_path, "w", encoding="utf-8") as file:
