@@ -1,6 +1,5 @@
 from httpx import AsyncClient
 from bs4 import BeautifulSoup
-import asyncio
 from constants.processing_constants import (
     not_required_tag_list,
     required_tag_list,

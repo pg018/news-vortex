@@ -2,16 +2,15 @@ import os
 import json
 from vortexmodel.processing.custom_tfidf import CustomTFIDF
 
+
 class GenerateTfIdf:
     def __init__(self) -> None:
-        self.script_directory = os.path.dirname(
-            os.path.abspath(__file__)
-        )  # Get the directory of the current script (i.e training_data)
+        self.data_folder = os.environ["GEN_DATA_FOLDER_SAVE_PATH"]
 
     def get_doc_list(self):
         """Creates list of documents of the scrapped text"""
         final_doc_list = []
-        data_folder = os.path.join(self.script_directory, "data", "content")
+        data_folder = os.path.join(self.data_folder, "content")
         if not os.path.exists(data_folder):
             print("Scrapped Content Folder does not exist")
             return

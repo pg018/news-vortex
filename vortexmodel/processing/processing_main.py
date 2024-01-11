@@ -5,7 +5,6 @@ from utils.processing_utils import get_parsed_date_article
 from vortexmodel.objects.IncomingNewsArticle import IncomingNewsArticle
 from vortexmodel.objects.OutgoingNewsArticle import OutgoingNewsArticle
 from vortexmodel.get_newsapi.get_news_api import GetNewsApi
-from vortexmodel.preprocessing.preprocessing_main import Preprocessing
 from vortexmodel.processing.scrape_content import ScrapeContent
 from vortexmodel.processing.summarize_content import SummarizeContent
 
@@ -18,7 +17,6 @@ class Processing:
         with open(self.tfidf_json_path, "r") as file:
             json_content = file.read()
         self.tfidf_vector = json.loads(json_content)
-        self.preprocessing_object = Preprocessing(user_prompt)
         self.no_articles = int(os.environ["NO_FINAL_ARTICLES"])
 
     async def get_news_articles(self, keyword_prompt_str: str):
@@ -29,7 +27,7 @@ class Processing:
     def get_top_articles(self, news_json_object):
         """
         Sorting the articles in descending order based on publishedAt (dates)
-        Return Value - Json List of articles of length 10 or less
+        Return Value - Json List of articles of given length or less
         """
         # sorting the articles based on publishedAt in descending order
         sorted_articles = sorted(
@@ -111,8 +109,6 @@ class Processing:
         abstract summary
         """
         try:
-            # Getting the keyword prompt
-            # keyword_prompt = self.preprocessing_object.preprocess_prompt()
             # getting all the news articles
             articles = await self.get_news_articles(self.entered_prompt)
             # getting the top 10 articles based on publishedAt property

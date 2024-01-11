@@ -6,11 +6,11 @@ from vortexmodel.processing.scrape_content import ScrapeContent
 
 class GenerateTrainingData:
     def __init__(self, query: str) -> None:
-        self.script_directory = os.path.dirname(
-            os.path.abspath(__file__)
-        )  # Get the directory of the current script (i.e training_data)
         self.entered_query = query
         self.entered_examples_cnt = int(os.environ["EXAMPLE_NUM_PER_QUERY_GEN_DATA"])
+        self.data_folder = os.environ["GEN_DATA_FOLDER_SAVE_PATH"]
+        if not os.path.exists(self.data_folder):
+            os.makedirs(self.data_folder)
 
     async def get_articles_url(self):
         """
@@ -47,7 +47,7 @@ class GenerateTrainingData:
         Return Value => boolean => Returns true if operation successfully performed
         """
         # path to data folder
-        data_folder = os.path.join(self.script_directory, "data")
+        data_folder = self.data_folder
         # path to content folder in the data folder
         content_folder = os.path.join(data_folder, "content")
         html_folder = os.path.join(data_folder, "html_files")

@@ -1,8 +1,8 @@
 import asyncio
 from dotenv import load_dotenv
 from vortexmodel.processing.processing_main import Processing
-from vortexmodel.model.training_data.GenerateTfIdf import GenerateTfIdf
-from vortexmodel.model.training_data.GenerateTrainingData import GenerateTrainingData
+from vortexmodel.model.GenerateTfIdf import GenerateTfIdf
+from vortexmodel.model.GenerateTrainingData import GenerateTrainingData
 
 load_dotenv()
 
