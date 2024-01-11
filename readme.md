@@ -4,6 +4,8 @@
 
 NewsVortex is a Python application that allows you to summarize news articles based on user input. It utilizes various modules for fetching news, scraping content, and generating summaries.
 
+Based on the query entered by user, the latest news articles are fetched, scrapped and thereafter summarized.
+
 ## Features
 
 1. Summarize News Articles
@@ -36,6 +38,7 @@ The data in `data` folder is currently on the following queries along with numbe
 3. Artificial Intelligence => 4
 4. Recession => 1
 5. India Stock Market => 7
+
 The given sample TF-IDF JSON is also based on these queries...
 
 The content in `result.json` is based on the query `rahul gandhi`
