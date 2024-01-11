@@ -108,11 +108,3 @@ unneccessary_content_list = [
     "experience your economic times newspaper the digital way!",
     ",",  # removing , to filter the duplicate content which was not happening because of ,
 ]  # Replace with the content you want to remove
-
-trained_topics = [
-    "elon musk_10",
-    "narendra modi_6",
-    "artificial intelligence_4",
-    "recession_1",
-    "india stock market_7",
-]
